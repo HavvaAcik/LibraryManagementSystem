@@ -1,0 +1,28 @@
+﻿@model LibraryManagementSystem.Models.Author
+
+@{
+    ViewData["Title"] = "Yazarı Sil";
+}
+
+<div class="alert alert-danger shadow-sm border-0">
+    <h1 class="h3 mb-0"> Bu Yazarı Silmek İstediğinize Emin Misiniz?</h1>
+</div>
+
+<div class="card-custom p-4 mt-4 shadow-sm">
+    <dl class="row mb-0">
+        <dt class="col-sm-3 fw-bold text-muted">Yazar Adı Soyadı:</dt>
+        <dd class="col-sm-9 fs-5">@Html.DisplayFor(model => model.AuthorFullName)</dd>
+
+        <dt class="col-sm-3 fw-bold text-muted">Doğum Yılı:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.BirthYear)</dd>
+
+        <dt class="col-sm-3 fw-bold text-muted">Biyografi:</dt>
+        <dd class="col-sm-9 text-secondary">@Html.DisplayFor(model => model.Biography)</dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4 border-top pt-4">
+        <input type="hidden" asp-for="AuthorId" />
+        <input type="submit" value="Evet, Kalıcı Olarak Sil" class="btn btn-danger shadow-sm px-4" />
+        <a asp-action="Index" class="btn btn-library-outline shadow-sm px-4 ms-2">Hayır, Vazgeç</a>
+    </form>
+</div>
