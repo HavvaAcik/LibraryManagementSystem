@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Migrations\\20260304064734_RenameBirthdayToBirthYear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260304064734_RenameBirthdayToBirthYear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\authors\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\authors\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\authors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\authors\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\authors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\authors\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\authors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\authors\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\authors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\authors\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\data\\librarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:data\\librarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\books\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\books\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\books\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|c:\\users\\acikh\\source\\repos\\librarymanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA2C1252-6F58-4477-B64E-88BACE2DB285}|LibraryManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,149 +54,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20260304064734_RenameBirthdayToBirthYear.cs",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Migrations\\20260304064734_RenameBirthdayToBirthYear.cs",
-              "RelativeDocumentMoniker": "Migrations\\20260304064734_RenameBirthdayToBirthYear.cs",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Migrations\\20260304064734_RenameBirthdayToBirthYear.cs",
-              "RelativeToolTip": "Migrations\\20260304064734_RenameBirthdayToBirthYear.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T06:47:34.919Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Authors\\Details.cshtml",
               "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Details.cshtml",
               "RelativeToolTip": "Views\\Authors\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:43:17.011Z",
+              "WhenOpened": "2026-03-04T07:52:19.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\Authors\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Delete.cshtml",
-              "RelativeToolTip": "Views\\Authors\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:42:21.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Authors\\Edit.cshtml",
               "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Edit.cshtml",
               "RelativeToolTip": "Views\\Authors\\Edit.cshtml",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACQAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:41:37.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Authors\\Create.cshtml",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Create.cshtml",
-              "RelativeToolTip": "Views\\Authors\\Create.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:40:40.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Authors\\Index.cshtml",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Authors\\Index.cshtml",
-              "RelativeToolTip": "Views\\Authors\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:38:20.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAAAFkAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-04T06:36:52.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthorsController.cs",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Controllers\\AuthorsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Controllers\\AuthorsController.cs",
-              "RelativeToolTip": "Controllers\\AuthorsController.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAFMAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T06:33:24.203Z",
+              "WhenOpened": "2026-03-04T07:51:45.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAFwAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:27:34.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Books\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:24:36.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Details.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Details.cshtml",
+              "RelativeToolTip": "Views\\Books\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:24:11.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Books\\Edit.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAACIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:23:41.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Create.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Create.cshtml",
+              "RelativeToolTip": "Views\\Books\\Create.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:23:10.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Books\\Index.cshtml",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Views\\Books\\Index.cshtml",
+              "RelativeToolTip": "Views\\Books\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAB0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T07:21:37.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T07:19:21.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T07:01:37.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LibraryDbContext.cs",
               "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Data\\LibraryDbContext.cs",
               "RelativeDocumentMoniker": "Data\\LibraryDbContext.cs",
               "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Data\\LibraryDbContext.cs",
               "RelativeToolTip": "Data\\LibraryDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T06:29:27.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Category.cs",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Category.cs",
-              "RelativeToolTip": "Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T06:20:36.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Author.cs",
-              "DocumentMoniker": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Author.cs",
-              "RelativeDocumentMoniker": "Models\\Author.cs",
-              "ToolTip": "C:\\Users\\acikh\\source\\repos\\LibraryManagementSystem\\Models\\Author.cs",
-              "RelativeToolTip": "Models\\Author.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T06:19:04.719Z",
               "EditorCaption": ""
             }
           ]

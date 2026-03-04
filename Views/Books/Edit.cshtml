@@ -1,0 +1,35 @@
+﻿@model LibraryManagementSystem.Models.Book
+@{
+    ViewData["Title"] = "Kitap Düzenle";
+}
+
+<div class="card-custom p-4 shadow-sm">
+    <h1 class="mb-4">Kitabı Düzenle</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="BookId" />
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label fw-bold"></label>
+                    <input asp-for="Title" class="form-control shadow-sm" />
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="CategoryId" class="control-label fw-bold"></label>
+                        <select asp-for="CategoryId" class="form-select shadow-sm" asp-items="ViewBag.CategoryId"></select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="AuthorId" class="control-label fw-bold"></label>
+                        <select asp-for="AuthorId" class="form-select shadow-sm" asp-items="ViewBag.AuthorId"></select>
+                    </div>
+                </div>
+                <div class="form-group d-flex align-items-center mt-4">
+                    <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-library-green shadow me-3" />
+                    <a asp-action="Index" class="btn btn-library-outline shadow-sm">Vazgeç</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

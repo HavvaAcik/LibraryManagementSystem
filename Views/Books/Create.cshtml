@@ -1,0 +1,55 @@
+﻿@model LibraryManagementSystem.Models.Book
+@{
+    ViewData["Title"] = "Yeni Kitap";
+}
+
+<div class="card-custom p-4 shadow-sm">
+    <h1 class="mb-4">Yeni Kitap Ekle</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label fw-bold"></label>
+                    <input asp-for="Title" class="form-control shadow-sm" placeholder="Kitap adını giriniz..." />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="ISBN" class="control-label fw-bold"></label>
+                    <input asp-for="ISBN" class="form-control shadow-sm" />
+                    <span asp-validation-for="ISBN" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="PublishedYear" class="control-label fw-bold"></label>
+                    <input asp-for="PublishedYear" class="form-control shadow-sm" type="number" />
+                    <span asp-validation-for="PublishedYear" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="CategoryId" class="control-label fw-bold"></label>
+                        <select asp-for="CategoryId" class="form-select shadow-sm border-2" asp-items="ViewBag.CategoryId">
+                            <option value="">-- Kategori Seçin --</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="AuthorId" class="control-label fw-bold"></label>
+                        <select asp-for="AuthorId" class="form-select shadow-sm border-2" asp-items="ViewBag.AuthorId">
+                            <option value="">-- Yazar Seçin --</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group d-flex align-items-center mt-4">
+                    <input type="submit" value="Kitabı Kaydet" class="btn btn-library-green shadow me-3" />
+                    <a asp-action="Index" class="btn btn-library-outline shadow-sm">Listeye Geri Dön</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

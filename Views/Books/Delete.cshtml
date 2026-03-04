@@ -1,0 +1,24 @@
+﻿@model LibraryManagementSystem.Models.Book
+@{
+    ViewData["Title"] = "Kitabı Sil";
+}
+
+<div class="alert alert-danger shadow-sm border-0 mb-4">
+    <h2 class="h4 mb-0">⚠️ Bu kitabı silmek istediğinize emin misiniz?</h2>
+</div>
+
+<div class="card-custom p-4 shadow-sm">
+    <h5 class="text-secondary">Silinecek Kitap Bilgileri:</h5>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Kitap Adı:</dt>
+        <dd class="col-sm-9 fw-bold">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class="col-sm-3">Yazar:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Author.AuthorFullName)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BookId" />
+        <input type="submit" value="Evet, Kitabı Sil" class="btn btn-danger shadow-sm px-4" />
+        <a asp-action="Index" class="btn btn-library-outline shadow-sm ms-2 px-4">Vazgeç</a>
+    </form>
+</div>
