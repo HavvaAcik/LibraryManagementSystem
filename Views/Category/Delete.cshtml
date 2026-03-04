@@ -1,0 +1,25 @@
+﻿@model LibraryManagementSystem.Models.Category
+
+@{
+    ViewData["Title"] = "Kategoriyi Sil";
+}
+
+<div class="alert alert-danger shadow-sm">
+    <h1 class="h3 mb-0">Bu Kategoriyi Silmek İstediğinize Emin Misiniz?</h1>
+</div>
+
+<div class="p-3">
+    <dl class="row mt-4">
+        <dt class="col-sm-3 fw-bold">Kategori Adı:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CategoryName)</dd>
+
+        <dt class="col-sm-3 fw-bold">Açıklama:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CategoryDescription)</dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="CategoryId" />
+        <input type="submit" value="Evet, Kalıcı Olarak Sil" class="btn btn-danger shadow-sm px-4" />
+        <a asp-action="Index" class="btn btn-library-outline shadow-sm px-4 ms-2">Vazgeç</a>
+    </form>
+</div>

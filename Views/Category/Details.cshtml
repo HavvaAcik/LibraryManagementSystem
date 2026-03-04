@@ -1,0 +1,22 @@
+﻿@model LibraryManagementSystem.Models.Category
+
+@{
+    ViewData["Title"] = "Detaylar";
+}
+
+<h1>Kategori Detayları</h1>
+
+<div class="shadow-sm p-4 bg-light rounded-3 mt-4">
+    <dl class="row mb-0">
+        <dt class="col-sm-3 fw-bold text-muted">Kategori Adı:</dt>
+        <dd class="col-sm-9 fs-5">@Html.DisplayFor(model => model.CategoryName)</dd>
+
+        <dt class="col-sm-3 fw-bold text-muted">Açıklama:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CategoryDescription)</dd>
+    </dl>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.CategoryId" class="btn btn-library-green shadow-sm px-4">Düzenle</a>
+    <a asp-action="Index" class="btn btn-library-outline shadow-sm ms-2 px-4">Listeye Dön</a>
+</div>

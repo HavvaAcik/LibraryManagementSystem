@@ -1,22 +1,129 @@
+:root {
+    --primary-50: #FAFBFA;
+    --primary-100: #ECF0EC;
+    --primary-200: #CEDBCE;
+    --primary-300: #B1C5B1;
+    --primary-400: #94AF94;
+    --primary-500: #779977;
+    --primary-600: #5F7E5F;
+    --primary-700: #496149;
+    --primary-800: #334433;
+    --primary-900: #1D271D;
+    --text-dark: #334433;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Temel Yapý */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: var(--primary-50);
+    color: var(--text-dark);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 60px; /* Footer için boþluk */
+}
+
+/* Navbar Özelleþtirme */
+.navbar-custom {
+    background-color: var(--primary-700);
+    box-shadow: var(--shadow-md);
+}
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+        color: white !important;
+        transition: opacity 0.3s ease;
+    }
+
+        .navbar-custom .nav-link:hover {
+            opacity: 0.8;
+        }
+
+/* Özel Yeþil Buton (Dolu) */
+.btn-library-green {
+    background-color: var(--primary-500) !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-library-green:hover {
+        background-color: var(--primary-700) !important;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+/* Özel Yeþil Buton (Çerçeveli) */
+.btn-library-outline {
+    border: 2px solid var(--primary-500) !important;
+    color: var(--primary-700) !important;
+    background-color: transparent;
+    padding: 6px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+    .btn-library-outline:hover {
+        background-color: var(--primary-500) !important;
+        color: white !important;
+    }
+
+/* Form Odaklanma (Focus) Efekti */
+.form-control:focus {
+    border-color: var(--primary-300);
+    box-shadow: 0 0 0 0.25rem rgba(119, 153, 119, 0.25);
+}
+
+.btn:focus, .btn:active:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(119, 153, 119, 0.25);
+}
+
+/* Kart ve Tablo Yapýlarý */
+.card-custom {
+    background: white;
+    border-radius: 12px;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.table thead {
+    background-color: var(--primary-100);
+    color: var(--primary-900);
+}
+
+/* Footer Alt Kýsým */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+.btn-library-outline, .btn-library-green {
+    text-decoration: none !important; 
+}
+
+.card-custom {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
 }
