@@ -8,23 +8,42 @@
     <hr />
     <div class="row">
         <div class="col-md-8">
-            <form asp-action="Create">
+            <!-- enctype multipart kısmını resim ekleyebilmek için ekledim. bunu eklemzessek resim yük
+                leyice controllera gider ve controller boş döner. 
+            -->
+            <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                 <div class="form-group mb-3">
                     <label asp-for="Title" class="control-label fw-bold"></label>
                     <input asp-for="Title" class="form-control shadow-sm" placeholder="Kitap adını giriniz..." />
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Summary" class="control-label fw-bold"></label>
+                    <textarea asp-for="Summary" class="form-control shadow-sm" rows="4" placeholder="Kitap hakkında kısa bir özet yazın..."></textarea>
+                    <span asp-validation-for="Summary" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label fw-bold">Kitap Kapağı Seç</label>
+                    <input type="file" name="imageFile" class="form-control shadow-sm" accept="image/*" />
+                    <small class="text-muted">Lütfen bir görsel seçiniz (jpg, png vb.)</small>
+                </div>
+
                 <div class="form-group mb-3">
                     <label asp-for="ISBN" class="control-label fw-bold"></label>
                     <input asp-for="ISBN" class="form-control shadow-sm" />
                     <span asp-validation-for="ISBN" class="text-danger"></span>
                 </div>
+
                 <div class="form-group mb-3">
                     <label asp-for="PublishedYear" class="control-label fw-bold"></label>
                     <input asp-for="PublishedYear" class="form-control shadow-sm" type="number" />
                     <span asp-validation-for="PublishedYear" class="text-danger"></span>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label asp-for="CategoryId" class="control-label fw-bold"></label>
@@ -39,6 +58,7 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="form-group d-flex align-items-center mt-4">
                     <input type="submit" value="Kitabı Kaydet" class="btn btn-library-green shadow me-3" />
                     <a asp-action="Index" class="btn btn-library-outline shadow-sm">Listeye Geri Dön</a>
@@ -47,9 +67,9 @@
         </div>
     </div>
 </div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-
 }

@@ -19,6 +19,12 @@ namespace LibraryManagementSystem.Models
         [DisplayName("Yayın Yılı")]
         public int PublishedYear { get; set; }
 
+        [DisplayName("Kitap Özeti")]
+        public string? Summary { get; set; }
+
+        [DisplayName("Kitap Kapağı")]
+        public string? ImageUrl { get; set; }
+
         // Navigation 
         [DisplayName("Kategori")]
         public int CategoryId { get; set; }

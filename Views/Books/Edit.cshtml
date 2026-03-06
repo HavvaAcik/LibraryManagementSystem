@@ -1,35 +1,82 @@
 ﻿@model LibraryManagementSystem.Models.Book
+
 @{
-    ViewData["Title"] = "Kitap Düzenle";
+    ViewData["Title"] = "Kitabı Düzenle";
 }
 
-<div class="card-custom p-4 shadow-sm">
-    <h1 class="mb-4">Kitabı Düzenle</h1>
+<div class="card-custom p-4 shadow-sm bg-white rounded">
+    <h1 class="mb-4 text-success">Kitabı Düzenle</h1>
     <hr />
+
     <div class="row">
         <div class="col-md-8">
-            <form asp-action="Edit">
+            <form asp-action="Edit" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                 <input type="hidden" asp-for="BookId" />
+                <input type="hidden" asp-for="ImageUrl" />
+
                 <div class="form-group mb-3">
                     <label asp-for="Title" class="control-label fw-bold"></label>
                     <input asp-for="Title" class="form-control shadow-sm" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Summary" class="control-label fw-bold"></label>
+                    <textarea asp-for="Summary" class="form-control shadow-sm" rows="4"></textarea>
+                    <span asp-validation-for="Summary" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4 p-3 border rounded bg-light">
+                    <label class="control-label fw-bold d-block mb-2">Mevcut Kapak</label>
+                    @if (!string.IsNullOrEmpty(Model?.ImageUrl))
+                    {
+                        <div class="mb-2 text-center border p-2 bg-white d-inline-block">
+                            <img src="@Model.ImageUrl" alt="Kapak" class="img-thumbnail shadow-sm" style="height: 150px;" />
+                        </div>
+                    }
+                    <input type="file" name="imageFile" class="form-control mt-2" accept="image/*" />
+                    <small class="text-muted">Kapağı değiştirmek istemiyorsanız dosya seçmeyin.</small>
+                </div>
+
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label asp-for="CategoryId" class="control-label fw-bold"></label>
-                        <select asp-for="CategoryId" class="form-select shadow-sm" asp-items="ViewBag.CategoryId"></select>
+                        <label asp-for="ISBN" class="control-label fw-bold"></label>
+                        <input asp-for="ISBN" class="form-control" />
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label asp-for="AuthorId" class="control-label fw-bold"></label>
-                        <select asp-for="AuthorId" class="form-select shadow-sm" asp-items="ViewBag.AuthorId"></select>
+                        <label asp-for="PublishedYear" class="control-label fw-bold"></label>
+                        <input asp-for="PublishedYear" class="form-control" type="number" />
                     </div>
                 </div>
-                <div class="form-group d-flex align-items-center mt-4">
-                    <input type="submit" value="Değişiklikleri Kaydet" class="btn btn-library-green shadow me-3" />
-                    <a asp-action="Index" class="btn btn-library-outline shadow-sm">Vazgeç</a>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label class="fw-bold">Kategori</label>
+                        <select asp-for="CategoryId" class="form-select border-2" asp-items="ViewBag.CategoryId">
+                            <option value="">-- Kategori Seç --</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="fw-bold">Yazar</label>
+                        <select asp-for="AuthorId" class="form-select border-2" asp-items="ViewBag.AuthorId">
+                            <option value="">-- Yazar Seç --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4 pt-3 border-top d-flex">
+                    <button type="submit" class="btn btn-success px-5 shadow me-3">Kaydet</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4">İptal</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -3,22 +3,57 @@
     ViewData["Title"] = "Kitap Detayları";
 }
 
-<h1>Kitap Detayları</h1>
+<h1 class="mb-4">Kitap Detayları</h1>
+
 <div class="shadow-sm p-4 bg-white rounded-3 mt-4">
-    <dl class="row mb-0">
-        <dt class="col-sm-3 fw-bold text-muted border-bottom py-2">Kitap Adı:</dt>
-        <dd class="col-sm-9 fs-5 border-bottom py-2">@Html.DisplayFor(model => model.Title)</dd>
+    <div class="row">
+        <div class="col-md-4 text-center border-end">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                @* Veritabanında zaten /img/ olduğu için sadece Model.ImageUrl yazıyoruz *@
+                <img src="@Model.ImageUrl"
+                     class="img-fluid rounded shadow-sm"
+                     alt="@Model.Title"
+                     style="max-height: 400px; width: auto; object-fit: contain;" />
+            }
+            else
+            {
+                <div class="bg-light d-flex align-items-center justify-content-center rounded" style="height: 300px;">
+                    <span class="text-muted">Görsel Mevcut Değil</span>
+                </div>
+            }
+        </div>
 
-        <dt class="col-sm-3 fw-bold text-muted border-bottom py-2">ISBN:</dt>
-        <dd class="col-sm-9 border-bottom py-2">@Html.DisplayFor(model => model.ISBN)</dd>
+        <div class="col-md-8">
+            <dl class="row mb-0">
+                <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Kitap Adı:</dt>
+                <dd class="col-sm-8 fs-5 border-bottom py-2">@Html.DisplayFor(model => model.Title)</dd>
 
-        <dt class="col-sm-3 fw-bold text-muted border-bottom py-2">Kategori:</dt>
-        <dd class="col-sm-9 border-bottom py-2">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+                <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">ISBN:</dt>
+                <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.ISBN)</dd>
 
-        <dt class="col-sm-3 fw-bold text-muted py-2">Yazar:</dt>
-        <dd class="col-sm-9 py-2">@Html.DisplayFor(model => model.Author.AuthorFullName)</dd>
-    </dl>
+                <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Kategori:</dt>
+                <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+
+                <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Yazar:</dt>
+                <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.Author.AuthorFullName)</dd>
+
+                <dt class="col-sm-4 fw-bold text-muted py-2">Özet:</dt>
+                <dd class="col-sm-8 py-2 text-justify">
+                    @if (!string.IsNullOrEmpty(Model.Summary))
+                    {
+                        @Model.Summary
+                    }
+                    else
+                    {
+                        <span class="text-muted italic">Özet bilgisi eklenmemiş.</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
 </div>
+
 <div class="mt-4">
     <a asp-action="Edit" asp-route-id="@Model?.BookId" class="btn btn-library-green shadow-sm px-4">Düzenle</a>
     <a asp-action="Index" class="btn btn-library-outline shadow-sm ms-2 px-4">Listeye Dön</a>
