@@ -1,0 +1,49 @@
+﻿@model LibraryManagementSystem.Models.Student
+
+<div class="row justify-content-center py-4">
+    <div class="col-md-8">
+        <div class="mb-4">
+            <h3 style="color: var(--primary-700); font-weight: 600;">
+                <i class="bi bi-person-plus-fill"></i> Yeni Öğrenci Kaydı
+            </h3>
+            <p class="text-muted">Lütfen sisteme kaydedilecek öğrencinin bilgilerini eksiksiz giriniz.</p>
+        </div>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="StudentFullName" class="form-label fw-semibold"></label>
+                    <input asp-for="StudentFullName" class="form-control" placeholder="Ad Soyad" style="border-radius: 8px;" />
+                    <span asp-validation-for="StudentFullName" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="StudentNumber" class="form-label fw-semibold"></label>
+                    <input asp-for="StudentNumber" class="form-control" placeholder="Okul No" style="border-radius: 8px;" />
+                    <span asp-validation-for="StudentNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Department" class="form-label fw-semibold"></label>
+                    <input asp-for="Department" class="form-control" placeholder="Bölüm" style="border-radius: 8px;" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="PhoneNumber" class="form-label fw-semibold"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="05xx xxx xx xx" style="border-radius: 8px;" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-4 border-top pt-3 d-flex gap-2">
+                <button type="submit" class="btn btn-custom-primary px-5 shadow-sm" style="border-radius: 8px;">Kaydet</button>
+                <a asp-action="Index" class="btn btn-outline-secondary px-4" style="border-radius: 8px;">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

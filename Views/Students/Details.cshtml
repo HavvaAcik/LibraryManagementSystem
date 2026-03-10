@@ -1,0 +1,38 @@
+﻿@model LibraryManagementSystem.Models.Student
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4 border-bottom pb-2">Öğrenci Bilgileri</h3>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Ad Soyad:</div>
+                        <div class="col-sm-8 text-muted">@Model.StudentFullName</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Okul Numarası:</div>
+                        <div class="col-sm-8 text-muted">@Model.StudentNumber</div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-4 fw-bold">Bölüm:</div>
+                        <div class="col-sm-8 text-muted">@Model.Department</div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4 fw-bold">Telefon:</div>
+                        <div class="col-sm-8 text-muted">@Model.PhoneNumber</div>
+                    </div>
+
+                    <div class="d-flex gap-2 border-top pt-3">
+                        <a asp-action="Edit" asp-route-id="@Model.StudentId" class="btn btn-warning px-4">Düzenle</a>
+                        <a asp-action="Index" class="btn btn-secondary px-4">Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
