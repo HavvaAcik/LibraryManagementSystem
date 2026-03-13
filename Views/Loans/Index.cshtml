@@ -1,0 +1,135 @@
+﻿@model IEnumerable<LibraryManagementSystem.Models.Loan>
+@{
+    ViewData["Title"] = "Ödünç İşlemleri";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 style="color: var(--primary-900);">Ödünç İşlemleri</h1>
+    <a asp-action="Create" class="btn btn-library-green shadow-sm">
+        <i class="bi bi-plus-lg"></i> Yeni Ödünç Ver
+    </a>
+</div>
+
+@* İstatistik kartları *@
+@{
+    var today = DateTime.Now;
+    var overdueCount = Model.Count(l => !l.IsReturned && (today - l.LoanDate).TotalDays > 15);
+    var activeCount = Model.Count(l => !l.IsReturned);
+    var returnedCount = Model.Count(l => l.IsReturned);
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="p-3 rounded-3 shadow-sm text-white text-center" style="background-color: var(--primary-500);">
+            <div class="fs-3 fw-bold">@activeCount</div>
+            <div class="small">Aktif Ödünç</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="p-3 rounded-3 shadow-sm text-center" style="background-color: #fff3cd;">
+            <div class="fs-3 fw-bold text-warning">@overdueCount</div>
+            <div class="small text-muted">Gecikmiş (15+ gün)</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="p-3 rounded-3 shadow-sm text-center" style="background-color: #d1e7dd;">
+            <div class="fs-3 fw-bold text-success">@returnedCount</div>
+            <div class="small text-muted">İade Edildi</div>
+        </div>
+    </div>
+</div>
+
+@* Gecikme uyarısı *@
+@if (overdueCount > 0)
+{
+    <div class="alert alert-danger d-flex align-items-center mb-4 shadow-sm" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+        <div>
+            <strong>@overdueCount adet kitap</strong> 15 günü aşmış ve henüz iade edilmemiş!
+        </div>
+    </div>
+}
+
+<table class="table table-hover shadow-sm align-middle">
+    <thead style="background-color: var(--primary-100);">
+        <tr>
+            <th>Öğrenci</th>
+            <th>Kitap</th>
+            <th>Alış Tarihi</th>
+            <th>Geçen Süre</th>
+            <th>Durum</th>
+            <th class="text-center">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var daysPassed = (DateTime.Now - item.LoanDate).Days;
+            var isOverdue = !item.IsReturned && daysPassed > 15;
+
+            <tr class="@(isOverdue ? "table-danger" : "")">
+                <td class="fw-bold">
+                    @item.Student.StudentFullName
+                    <div class="text-muted small">@item.Student.StudentNumber</div>
+                </td>
+                <td>@item.Book.Title</td>
+                <td>@item.LoanDate.ToShortDateString()</td>
+                <td>
+                    @if (item.IsReturned)
+                    {
+                        <span class="text-muted small">İade edildi</span>
+                    }
+                    else if (isOverdue)
+                    {
+                        <span class="text-danger fw-bold">
+                            <i class="bi bi-clock-history"></i> @daysPassed gün
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="text-muted small">@daysPassed gün</span>
+                    }
+                </td>
+                <td>
+                    @if (item.IsReturned)
+                    {
+                        <span class="badge rounded-pill bg-success">
+                            <i class="bi bi-check-circle"></i> Teslim Edildi
+                        </span>
+                        <div class="text-muted small">@item.ReturnDate.ToShortDateString()</div>
+                    }
+                    else if (isOverdue)
+                    {
+                        <span class="badge rounded-pill bg-danger">
+                            <i class="bi bi-exclamation-circle"></i> Gecikmiş
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge rounded-pill bg-warning text-dark">
+                            <i class="bi bi-hourglass-split"></i> Öğrencide
+                        </span>
+                    }
+                </td>
+                <td class="text-center">
+                    <div class="d-flex gap-1 justify-content-center flex-wrap">
+                        @if (!item.IsReturned)
+                        {
+                            <form asp-action="QuickReturn" asp-route-id="@item.LoanId" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-success shadow-sm"
+                                        title="Teslim Al"
+                                        onclick="return confirm('@item.Student.StudentFullName adlı öğrencinin kitabı teslim alındı olarak işaretlensin mi?')">
+                                    <i class="bi bi-check-lg"></i> Teslim Al
+                                </button>
+                            </form>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.LoanId" class="btn btn-sm btn-library-outline">Detay</a>
+                        <a asp-action="Edit" asp-route-id="@item.LoanId" class="btn btn-sm btn-library-outline">Düzenle</a>
+                        <a asp-action="Delete" asp-route-id="@item.LoanId" class="btn btn-sm btn-danger text-white">Sil</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

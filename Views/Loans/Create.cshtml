@@ -1,0 +1,66 @@
+﻿@model LibraryManagementSystem.Models.Loan
+@{
+    ViewData["Title"] = "Ödünç Ver";
+}
+
+<div class="row justify-content-center py-4">
+    <div class="col-md-6">
+        <h3 class="mb-4" style="color: var(--primary-700); font-weight: 600;">
+            <i class="bi bi-book-half"></i> Kitap Ödünç Ver
+        </h3>
+
+        @* Validasyon hata kutusu *@
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger shadow-sm mb-4" role="alert">
+                <div class="fw-bold mb-1"><i class="bi bi-exclamation-triangle-fill me-2"></i>İşlem Tamamlanamadı</div>
+                <div asp-validation-summary="All" class="mb-0"></div>
+            </div>
+        }
+
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label class="form-label fw-bold">Öğrenci Seçiniz</label>
+                <select asp-for="StudentId" class="form-select shadow-sm" asp-items="ViewBag.StudentId" style="border-radius: 8px;">
+                    <option value="">-- Öğrenci Seç --</option>
+                </select>
+                <span asp-validation-for="StudentId" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Kitap Seçiniz</label>
+                <select asp-for="BookId" class="form-select shadow-sm" asp-items="ViewBag.BookId" style="border-radius: 8px;">
+                    <option value="">-- Kitap Seç --</option>
+                </select>
+                <span asp-validation-for="BookId" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="LoanDate" class="form-label fw-bold"></label>
+                <input asp-for="LoanDate" class="form-control shadow-sm" type="date"
+                       value="@DateTime.Now.ToString("yyyy-MM-dd")" style="border-radius: 8px;" />
+                <span asp-validation-for="LoanDate" class="text-danger small"></span>
+            </div>
+
+            @* Bilgi kutusu *@
+            <div class="alert alert-info small mb-4 py-2" style="border-radius: 8px;">
+                <i class="bi bi-info-circle me-1"></i>
+                Bir öğrenci en fazla <strong>3 kitap</strong> ödünç alabilir.
+                Kitapların <strong>15 gün</strong> içinde iade edilmesi gerekmektedir.
+            </div>
+
+            <div class="mt-4 border-top pt-3 d-flex gap-2">
+                <button type="submit" class="btn btn-library-green px-5 shadow-sm">
+                    <i class="bi bi-check-lg me-1"></i> Ödünç İşlemini Tamamla
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary px-4">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

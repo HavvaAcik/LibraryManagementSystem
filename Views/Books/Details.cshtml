@@ -1,16 +1,51 @@
 ﻿@model LibraryManagementSystem.Models.Book
 @{
     ViewData["Title"] = "Kitap Detayları";
+    var activeLoan = ViewBag.ActiveLoan as LibraryManagementSystem.Models.Loan;
+    var isOnLoan = activeLoan != null;
+    var daysPassed = isOnLoan ? (DateTime.Now - activeLoan.LoanDate).Days : 0;
+    var isOverdue = isOnLoan && daysPassed > 15;
 }
 
 <h1 class="mb-4">Kitap Detayları</h1>
 
-<div class="shadow-sm p-4 bg-white rounded-3 mt-4">
+@if (isOnLoan)
+{
+    if (isOverdue)
+    {
+        <div class="alert alert-danger d-flex align-items-center mb-4 shadow-sm">
+            <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+            <div>
+                Bu kitap <strong>@activeLoan.Student.StudentFullName</strong> adlı öğrencide
+                <strong>@daysPassed gündür</strong> bulunuyor ve süresi geçmiş!
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning d-flex align-items-center mb-4 shadow-sm">
+            <i class="bi bi-hourglass-split me-2 fs-5"></i>
+            <div>
+                Bu kitap şu an <strong>@activeLoan.Student.StudentFullName</strong> adlı öğrencide.
+                (@daysPassed gündür ödünçte)
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="alert alert-success d-flex align-items-center mb-4 shadow-sm">
+        <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+        <div>Bu kitap şu an <strong>rafta mevcut</strong>, ödünç verilebilir.</div>
+    </div>
+}
+
+<div class="shadow-sm p-4 bg-white rounded-3 mt-2">
     <div class="row">
+
         <div class="col-md-4 text-center border-end">
             @if (!string.IsNullOrEmpty(Model.ImageUrl))
             {
-                @* Veritabanında zaten /img/ olduğu için sadece Model.ImageUrl yazıyoruz *@
                 <img src="@Model.ImageUrl"
                      class="img-fluid rounded shadow-sm"
                      alt="@Model.Title"
@@ -18,19 +53,47 @@
             }
             else
             {
-                <div class="bg-light d-flex align-items-center justify-content-center rounded" style="height: 300px;">
-                    <span class="text-muted">Görsel Mevcut Değil</span>
+                <div class="bg-light d-flex align-items-center justify-content-center rounded"
+                     style="height: 300px;">
+                    <span class="text-muted">
+                        <i class="bi bi-image fs-1 d-block mb-2"></i>
+                        Görsel Mevcut Değil
+                    </span>
                 </div>
             }
+
+            <div class="mt-3">
+                @if (isOnLoan && isOverdue)
+                {
+                    <span class="badge bg-danger rounded-pill px-3 py-2 fs-6">
+                        <i class="bi bi-exclamation-circle me-1"></i> Gecikmiş
+                    </span>
+                }
+                else if (isOnLoan)
+                {
+                    <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6">
+                        <i class="bi bi-hourglass-split me-1"></i> Ödünçte
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-success rounded-pill px-3 py-2 fs-6">
+                        <i class="bi bi-check-circle me-1"></i> Rafta Mevcut
+                    </span>
+                }
+            </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8 ps-md-4">
             <dl class="row mb-0">
                 <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Kitap Adı:</dt>
                 <dd class="col-sm-8 fs-5 border-bottom py-2">@Html.DisplayFor(model => model.Title)</dd>
 
                 <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">ISBN:</dt>
-                <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.ISBN)</dd>
+                <dd class="col-sm-8 border-bottom py-2">@(Model.ISBN ?? "-")</dd>
+
+                <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Yayın Yılı:</dt>
+                <dd class="col-sm-8 border-bottom py-2">@Model.PublishedYear</dd>
 
                 <dt class="col-sm-4 fw-bold text-muted border-bottom py-2">Kategori:</dt>
                 <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
@@ -39,22 +102,62 @@
                 <dd class="col-sm-8 border-bottom py-2">@Html.DisplayFor(model => model.Author.AuthorFullName)</dd>
 
                 <dt class="col-sm-4 fw-bold text-muted py-2">Özet:</dt>
-                <dd class="col-sm-8 py-2 text-justify">
+                <dd class="col-sm-8 py-2">
                     @if (!string.IsNullOrEmpty(Model.Summary))
                     {
                         @Model.Summary
                     }
                     else
                     {
-                        <span class="text-muted italic">Özet bilgisi eklenmemiş.</span>
+                        <span class="text-muted fst-italic">Özet bilgisi eklenmemiş.</span>
                     }
                 </dd>
             </dl>
+
+            @if (isOnLoan)
+            {
+                <div class="mt-3 pt-3 border-top">
+                    <h6 class="fw-bold text-muted text-uppercase small mb-3">
+                        <i class="bi bi-person-fill me-1"></i> Mevcut Ödünç Bilgisi
+                    </h6>
+                    <div class="row g-2">
+                        <div class="col-sm-6">
+                            <div class="p-2 rounded-2" style="background-color: var(--primary-100);">
+                                <div class="text-muted small">Öğrenci</div>
+                                <div class="fw-bold">@activeLoan.Student.StudentFullName</div>
+                                <div class="text-muted small">@activeLoan.Student.StudentNumber</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-2 rounded-2" style="background-color: @(isOverdue ? "rgba(220,53,69,0.1)" : "var(--primary-100)");">
+                                <div class="text-muted small">Alış Tarihi</div>
+                                <div class="fw-bold">@activeLoan.LoanDate.ToShortDateString()</div>
+                                <div class="small @(isOverdue ? "text-danger fw-bold" : "text-muted")">
+                                    @daysPassed gün önce alındı
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>
 
-<div class="mt-4">
-    <a asp-action="Edit" asp-route-id="@Model?.BookId" class="btn btn-library-green shadow-sm px-4">Düzenle</a>
-    <a asp-action="Index" class="btn btn-library-outline shadow-sm ms-2 px-4">Listeye Dön</a>
+<div class="mt-4 d-flex gap-2 flex-wrap">
+    @if (!isOnLoan)
+    {
+        <a asp-controller="Loans" asp-action="Create"
+           class="btn btn-library-green shadow-sm px-4">
+            <i class="bi bi-book-half me-1"></i> Ödünç Ver
+        </a>
+    }
+    <a asp-action="Edit" asp-route-id="@Model.BookId"
+       class="btn btn-library-green shadow-sm px-4">
+        <i class="bi bi-pencil me-1"></i> Düzenle
+    </a>
+    <a asp-action="Index"
+       class="btn btn-outline-secondary shadow-sm px-4">
+        <i class="bi bi-arrow-left me-1"></i> Listeye Dön
+    </a>
 </div>

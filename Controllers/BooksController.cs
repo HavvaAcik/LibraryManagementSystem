@@ -61,6 +61,13 @@ namespace LibraryManagementSystem.Controllers
 
             if (book == null) return NotFound();
 
+            // Kitabın aktif ödüncünü çek
+            var activeLoan = await _context.Loans
+                .Include(l => l.Student)
+                .FirstOrDefaultAsync(l => l.BookId == id && !l.IsReturned);
+
+            ViewBag.ActiveLoan = activeLoan;
+
             return View(book);
         }
 

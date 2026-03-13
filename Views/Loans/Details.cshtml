@@ -1,0 +1,134 @@
+﻿@model LibraryManagementSystem.Models.Loan
+@{
+    ViewData["Title"] = "İşlem Detayları";
+    var daysPassed = (DateTime.Now - Model.LoanDate).Days;
+    var isOverdue = !Model.IsReturned && daysPassed > 15;
+}
+
+@* Gecikme uyarısı *@
+@if (isOverdue)
+{
+    <div class="alert alert-danger d-flex align-items-center mb-4 shadow-sm" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+        <div>
+            <strong>Gecikmiş Kitap!</strong> Bu kitap @daysPassed gündür iade edilmedi.
+        </div>
+    </div>
+}
+
+<h3 class="mb-4" style="color: var(--primary-700); font-weight: 600;">
+    <i class="bi bi-receipt"></i> İşlem Detayları
+</h3>
+
+<div class="row shadow-sm rounded-4 p-4 bg-white border g-0">
+
+    @* Öğrenci Bilgileri *@
+    <div class="col-md-6 border-end pe-4">
+        <h5 class="text-muted small text-uppercase fw-bold mb-3">
+            <i class="bi bi-person-fill me-1"></i> Öğrenci Bilgileri
+        </h5>
+        <dl class="row mb-0">
+            <dt class="col-sm-5 text-muted">Ad Soyad:</dt>
+            <dd class="col-sm-7 fw-bold">@Model.Student.StudentFullName</dd>
+            <dt class="col-sm-5 text-muted">Okul No:</dt>
+            <dd class="col-sm-7">@Model.Student.StudentNumber</dd>
+            <dt class="col-sm-5 text-muted">Bölüm:</dt>
+            <dd class="col-sm-7">@Model.Student.Department</dd>
+            <dt class="col-sm-5 text-muted">Telefon:</dt>
+            <dd class="col-sm-7">@Model.Student.PhoneNumber</dd>
+        </dl>
+    </div>
+
+    @* Kitap Bilgileri *@
+    <div class="col-md-6 ps-md-4">
+        <h5 class="text-muted small text-uppercase fw-bold mb-3">
+            <i class="bi bi-book-fill me-1"></i> Kitap Bilgileri
+        </h5>
+        <dl class="row mb-0">
+            <dt class="col-sm-5 text-muted">Kitap Adı:</dt>
+            <dd class="col-sm-7 fw-bold">@Model.Book.Title</dd>
+            <dt class="col-sm-5 text-muted">Kategori:</dt>
+            <dd class="col-sm-7">@(Model.Book.Category?.CategoryName ?? "-")</dd>
+            <dt class="col-sm-5 text-muted">Yazar:</dt>
+            <dd class="col-sm-7">@(Model.Book.Author?.AuthorFullName ?? "-")</dd>
+            <dt class="col-sm-5 text-muted">ISBN:</dt>
+            <dd class="col-sm-7">@(Model.Book.ISBN ?? "-")</dd>
+        </dl>
+    </div>
+
+    @* Tarih ve Durum Bilgileri *@
+    <div class="col-12 mt-4 pt-3 border-top">
+        <h5 class="text-muted small text-uppercase fw-bold mb-3">
+            <i class="bi bi-calendar3 me-1"></i> Ödünç Bilgileri
+        </h5>
+        <div class="row g-3">
+            <div class="col-md-3">
+                <div class="p-3 rounded-3 text-center" style="background-color: var(--primary-100);">
+                    <div class="text-muted small mb-1">Veriliş Tarihi</div>
+                    <div class="fw-bold">@Model.LoanDate.ToShortDateString()</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 rounded-3 text-center" style="background-color: var(--primary-100);">
+                    <div class="text-muted small mb-1">Son İade Tarihi</div>
+                    <div class="fw-bold @(isOverdue ? "text-danger" : "")">
+                        @Model.LoanDate.AddDays(15).ToShortDateString()
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 rounded-3 text-center" style="background-color: var(--primary-100);">
+                    <div class="text-muted small mb-1">İade Tarihi</div>
+                    <div class="fw-bold text-success">
+                        @(Model.IsReturned? Model.ReturnDate.ToShortDateString() : "Henüz İade Edilmedi")
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-3 rounded-3 text-center" style="background-color: var(--primary-100);">
+                    <div class="text-muted small mb-1">Durum</div>
+                    <div>
+                        @if (Model.IsReturned)
+                        {
+                            <span class="badge rounded-pill bg-success fs-6">
+                                <i class="bi bi-check-circle"></i> Teslim Edildi
+                            </span>
+                        }
+                        else if (isOverdue)
+                        {
+                            <span class="badge rounded-pill bg-danger fs-6">
+                                <i class="bi bi-exclamation-circle"></i> Gecikmiş
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge rounded-pill bg-warning text-dark fs-6">
+                                <i class="bi bi-hourglass-split"></i> Öğrencide (@daysPassed gün)
+                            </span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Butonlar *@
+<div class="mt-4 d-flex gap-2">
+    @if (!Model.IsReturned)
+    {
+        <form asp-action="QuickReturn" asp-route-id="@Model.LoanId" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-success px-4 shadow-sm"
+                    onclick="return confirm('Kitap teslim alındı olarak işaretlensin mi?')">
+                <i class="bi bi-check-lg me-1"></i> Teslim Al
+            </button>
+        </form>
+    }
+    <a asp-action="Edit" asp-route-id="@Model.LoanId" class="btn btn-library-green px-4">
+        <i class="bi bi-pencil me-1"></i> Düzenle
+    </a>
+    <a asp-action="Index" class="btn btn-outline-secondary px-4">
+        <i class="bi bi-arrow-left me-1"></i> Geri Dön
+    </a>
+</div>

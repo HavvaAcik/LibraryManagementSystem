@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using LibraryManagementSystem.Data;
+﻿using LibraryManagementSystem.Data;
 using LibraryManagementSystem.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementSystem.Controllers
 {
@@ -49,13 +44,20 @@ namespace LibraryManagementSystem.Controllers
             return View();
         }
 
-        // POST: Students/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //POST: Students / Create 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StudentId,StudentFullName,StudentNumber,Department,PhoneNumber")] Student student)
         {
+            //Aynı öğrenci numarası sistemde olamaz
+            var numberExists = await _context.Students
+                .AnyAsync(s => s.StudentNumber == student.StudentNumber);
+
+            if (numberExists)
+            {
+                ModelState.AddModelError("StudentNumber", "Bu öğrenci numarası zaten kayıtlı. Lütfen farklı bir numara giriniz.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(student);
@@ -82,15 +84,19 @@ namespace LibraryManagementSystem.Controllers
         }
 
         // POST: Students/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("StudentId,StudentFullName,StudentNumber,Department,PhoneNumber")] Student student)
         {
-            if (id != student.StudentId)
+            if (id != student.StudentId) return NotFound();
+
+            //Aynı öğrenci numarası başka birinde olamaz 
+            var numberExists = await _context.Students
+                .AnyAsync(s => s.StudentNumber == student.StudentNumber && s.StudentId != student.StudentId);
+
+            if (numberExists)
             {
-                return NotFound();
+                ModelState.AddModelError("StudentNumber", "Bu öğrenci numarası başka bir öğrenciye ait. Lütfen farklı bir numara giriniz.");
             }
 
             if (ModelState.IsValid)
@@ -102,14 +108,8 @@ namespace LibraryManagementSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.StudentId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!StudentExists(student.StudentId)) return NotFound();
+                    else throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
